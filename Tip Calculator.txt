@@ -1,0 +1,18 @@
+import 'dart:io';
+
+void main() {
+  print('Welcome to the tip calculator!');
+
+  stdout.write('What is the total bill amount?\n\$:');
+  double bill = double.parse(stdin.readLineSync()!);
+
+  stdout.write('How much tip would you like to give?\nPercent:');
+  int tip = int.parse(stdin.readLineSync()!);
+
+  stdout.write('How many people to split the bill?\nPeople:');
+  int split = int.parse(stdin.readLineSync()!);
+
+  double total = ((bill * (tip / 100) + bill) / split);
+
+  print('Each person should pay: \$${total.toStringAsFixed(2)}');
+}
